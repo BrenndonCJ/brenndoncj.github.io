@@ -4,754 +4,754 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayk Brendon | Data Scientist & AI Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #4361ee;  /* Azul vibrante */
-            --primary-dark: #3a0ca3;
-            --secondary: #7209b7;  /* Roxo moderno */
-            --accent: #f72585;  /* Rosa elétrico */
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-            --card-bg: rgba(255, 255, 255, 0.85);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            scroll-behavior: smooth;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .dark body {
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
         
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 5rem 0 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            clip-path: ellipse(100% 100% at 50% 0%);
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(14,165,233,1) 0%, rgba(2,132,199,1) 100%);
         }
         
-        .header-content {
-            position: relative;
-            z-index: 2;
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, rgba(7,89,133,1) 0%, rgba(12,74,110,1) 100%);
         }
         
-        .blob {
-            position: absolute;
-            opacity: 0.1;
-            z-index: 1;
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #0ea5e9, #22c55e);
         }
         
-        .blob-1 {
-            top: -50px;
-            left: -50px;
-            width: 300px;
-            height: 300px;
-            fill: var(--accent);
-        }
-        
-        .blob-2 {
-            bottom: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            fill: var(--secondary);
-        }
-        
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1.5rem;
+        .skill-badge {
             transition: all 0.3s ease;
         }
         
-        .profile-img:hover {
-            transform: scale(1.05);
-            border-color: var(--accent);
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin: 0.5rem 0;
-            background: linear-gradient(to right, white, #e0e0e0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #22c55e;
+            border: 3px solid white;
+            left: -8px;
+            top: 20px;
+            z-index: 10;
         }
         
-        .tagline {
-            font-size: 1.3rem;
-            margin: 1rem auto 1.5rem;
-            max-width: 700px;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 300;
+        .dark .timeline-item::before {
+            border-color: #1e293b;
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+        .timeline-item:nth-child(even)::before {
+            left: auto;
+            right: -8px;
         }
         
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            background-color: white;
+            color: #1e293b;
+        }
+        
+        .dark .project-card {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .wave-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-shape svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 100px;
+        }
+        
+        .wave-shape .shape-fill {
+            fill: #ffffff;
+        }
+        
+        .dark .wave-shape .shape-fill {
+            fill: #0f172a;
+        }
+        
+        .section-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .section-divider.top {
+            transform: rotate(180deg);
+        }
+        
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            right: 2rem;
+            bottom: 2rem;
+            z-index: 100;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
+            background-color: #0ea5e9;
             color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
-        }
-        
-        .scroll-down {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-        
-        /* Sections */
-        section {
-            padding: 5rem 0;
-            position: relative;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            display: inline-block;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            border-radius: 2px;
-        }
-        
-        /* About Section */
-        #about {
-            background-color: white;
-        }
-        
-        .about-content {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
-            gap: 3rem;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--gray);
-        }
-        
-        .skills-container {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .skills-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-dark);
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .skill {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .skill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
-        }
-        
-        /* Experience Section */
-        #experience {
-            background-color: var(--light-gray);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .timeline-item {
-            padding: 1.5rem;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 3rem;
-            text-align: right;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 3rem;
-        }
-        
-        .timeline-content {
-            padding: 2rem;
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(5px);
-            position: relative;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--card-bg);
-            right: -10px;
-            top: 30px;
-            transform: rotate(45deg);
-            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.05);
-            border-right: 1px solid rgba(255, 255, 255, 0.3);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: var(--card-bg);
-            left: -10px;
-            top: 30px;
-            transform: rotate(45deg);
-            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.05);
-            border-left: 1px solid rgba(255, 255, 255, 0.3);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .timeline-date {
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        .timeline-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-        }
-        
-        .timeline-company {
-            font-size: 1rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .timeline-list {
-            list-style-type: none;
-        }
-        
-        .timeline-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            color: var(--gray);
-        }
-        
-        .timeline-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            box-shadow: 0 0 0 4px rgba(114, 9, 183, 0.2);
-        }
-        
-        /* Education Section */
-        #education {
-            background-color: white;
-        }
-        
-        .education-card {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2.5rem;
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        
-        .education-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary-dark);
-        }
-        
-        .education-institution {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        .education-period {
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
-            color: white;
-            text-align: center;
-            clip-path: ellipse(120% 100% at 50% 100%);
-            padding-bottom: 8rem;
-        }
-        
-        .contact-title {
-            color: white;
-        }
-        
-        .contact-title h2::after {
-            background: linear-gradient(to right, white, var(--accent));
-        }
-        
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-text {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .contact-links {
-            display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .contact-link i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
         }
         
-        .contact-link:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        /* Text colors */
+        .text-gray-600 {
+            color: #4b5563;
         }
         
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            background-color: var(--dark);
-            color: white;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
+        .dark .text-gray-600 {
+            color: #94a3b8;
         }
         
-        .footer-text {
-            opacity: 0.7;
+        .text-gray-800 {
+            color: #1f2937;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .timeline::before {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-                text-align: left !important;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: 18px;
-                right: auto;
-            }
-            
-            .timeline-dot {
-                left: 31px;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+        .dark .text-gray-800 {
+            color: #f1f5f9;
         }
         
-        /* Animations */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+        .text-gray-700 {
+            color: #374151;
         }
         
-        .floating {
-            animation: float 6s ease-in-out infinite;
+        .dark .text-gray-700 {
+            color: #cbd5e1;
+        }
+        
+        /* Background colors */
+        .bg-white {
+            background-color: white;
+        }
+        
+        .dark .bg-white {
+            background-color: #1e293b;
+        }
+        
+        .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        /* Timeline content */
+        .timeline-content {
+            background-color: white;
+            color: #1e293b;
+            border-color: #e5e7eb;
+        }
+        
+        .dark .timeline-content {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            border-color: #334155;
+        }
+        
+        /* Glass effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .title-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* Download section */
+        .bg-gradient-to-r.from-blue-50.to-green-50 {
+            background: linear-gradient(to right, #eff6ff, #ecfdf5);
+        }
+        
+        .dark .bg-gradient-to-r.from-blue-50.to-green-50 {
+            background: linear-gradient(to right, #1e3a8a, #14532d);
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <svg class="blob blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="M44.3,-57.3C56.8,-48.3,66.1,-33.5,70.4,-17.4C74.7,-1.3,74,16.2,65.7,31.5C57.4,46.8,41.5,59.9,23.1,67.7C4.7,75.5,-16.3,78.1,-33.4,70.6C-50.5,63.1,-63.8,45.6,-69.1,26.3C-74.4,7.1,-71.7,-13.9,-62.1,-32.4C-52.5,-50.9,-36.1,-66.9,-18.3,-74.1C-0.6,-81.3,18.4,-79.7,33.9,-70.8C49.4,-61.9,61.3,-45.7,68.7,-27.9C76.1,-10.1,79,9.3,73.8,25.9C68.6,42.6,55.3,56.5,39.3,65.2C23.3,73.9,4.6,77.4,-11.4,73.2C-27.4,69,-40.8,57,-51.5,43.1C-62.2,29.2,-70.2,13.6,-71.9,-3.1C-73.6,-19.8,-69,-39.6,-57.1,-53.1C-45.2,-66.6,-26.1,-73.8,-6.6,-70.2C12.9,-66.6,25.8,-52.2,44.3,-57.3Z" transform="translate(100 100)" />
-        </svg>
+<body class="antialiased">
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white relative overflow-hidden">
+        <div class="wave-shape">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
         
-        <svg class="blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="M49.3,-56.1C62.3,-45.7,70.3,-29.3,72.1,-12.6C73.9,4.1,69.5,21.1,58.2,33.2C46.9,45.3,28.7,52.5,9.3,58.3C-10.1,64.1,-30.7,68.5,-45.8,60.3C-60.9,52.1,-70.4,31.3,-73.4,9.5C-76.5,-12.3,-73,-34.9,-60.1,-49.1C-47.1,-63.2,-24.6,-68.8,-3.7,-66.4C17.1,-64,34.3,-53.5,49.3,-56.1Z" transform="translate(100 100)" />
-        </svg>
-        
-        <div class="container header-content">
-            <img src="https://ui-avatars.com/api/?name=Mayk+Brendon&size=180&background=4361ee&color=fff&font-size=0.5" alt="Mayk Brendon" class="profile-img floating">
-            <h1>Mayk Brendon</h1>
-            <p class="tagline">Data Scientist | Machine Learning Specialist | Python Expert</p>
+        <div class="container mx-auto px-6 py-24 md:py-32 lg:py-40 text-center relative z-10">
+            <div class="animate-float mx-auto w-40 h-40 rounded-full border-4 border-white overflow-hidden shadow-xl mb-8">
+                <img src="https://ui-avatars.com/api/?name=Mayk+Brendon&size=200&background=0ea5e9&color=fff" alt="Mayk Brendon" class="w-full h-full object-cover">
+            </div>
             
-            <div class="social-links">
-                <a href="mailto:maykbrendon.antunes@gmail.com" class="social-link" title="E-mail">
-                    <i class="fas fa-envelope"></i>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 title-font">Mayk Brendon</h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-8">Data Scientist | Machine Learning Specialist | Python Expert</p>
+            
+            <div class="flex justify-center space-x-4 mb-12">
+                <a href="mailto:maykbrendon.antunes@gmail.com" class="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+                    <i class="fas fa-envelope mr-2"></i> Contact Me
                 </a>
-                <a href="https://www.linkedin.com/in/maykbrendondatascientist" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="www.linkedin.com/in/maykbrendondatascientist" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center dark:bg-blue-600 dark:hover:bg-blue-700">
+                    <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
                 </a>
-                <a href="https://github.com/BrenndonCJ" class="social-link" title="GitHub">
+                <a href="#download-cv" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center dark:bg-green-700 dark:hover:bg-green-800">
+                    <i class="fas fa-download mr-2"></i> Download CV
+                </a>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="github.com/BrenndonCJ" class="text-white hover:text-blue-200 text-2xl transition-colors duration-300" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
+                <a href="#" class="text-white hover:text-blue-200 text-2xl transition-colors duration-300" title="Medium">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <a href="#" class="text-white hover:text-blue-200 text-2xl transition-colors duration-300" title="Kaggle">
+                    <i class="fab fa-kaggle"></i>
+                </a>
             </div>
-            
-            <a href="#about" class="scroll-down">
-                <i class="fas fa-chevron-down"></i>
-            </a>
         </div>
     </header>
-    
+
     <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Sobre Mim</h2>
+    <section class="py-20 bg-white dark:bg-gray-900" id="about">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 title-font">Sobre Mim</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Profissional de dados apaixonado por transformar informações em insights valiosos. Com expertise em análise de dados, machine learning e visualização, desenvolvo soluções inteligentes que impulsionam resultados de negócios.</p>
-                    
-                    <p>Autor de artigo publicado sobre mineração de dados e machine learning, estou sempre buscando inovação e melhores práticas na área de ciência de dados. Minha abordagem combina conhecimento técnico avançado com uma visão estratégica de negócios.</p>
-                    
-                    <p>Como pensador estratégico, trabalho eficientemente sob pressão e em equipe, com habilidades excepcionais de comunicação para colaborar com stakeholders em todos os níveis organizacionais.</p>
+            <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                <div class="lg:w-1/2 mb-12 lg:mb-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Data Science" class="rounded-xl shadow-2xl w-full">
                 </div>
                 
-                <div class="skills-container">
-                    <h3 class="skills-title">Principais Competências</h3>
-                    <div class="skills">
-                        <span class="skill">PySpark</span>
-                        <span class="skill">Scikit-Learn</span>
-                        <span class="skill">Análise de Dados</span>
-                        <span class="skill">Machine Learning</span>
-                        <span class="skill">Python</span>
-                        <span class="skill">Power BI</span>
-                        <span class="skill">Power Apps</span>
-                        <span class="skill">Django</span>
-                        <span class="skill">Análise Geoespacial</span>
-                        <span class="skill">AutoML</span>
-                        <span class="skill">APIs</span>
-                        <span class="skill">QGIS</span>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Profissional de Dados com Expertise em Machine Learning</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Sou um cientista de dados com ampla experiência em análise de dados, mineração de dados, machine learning e visualização de dados. 
+                        Com habilidades em Python, Power BI e Power Apps, tenho um histórico comprovado de sucesso em projetos de BI e desenvolvimento de aplicativos.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Autor de um artigo publicado sobre mineração de dados e machine learning. Apaixonado por trabalhar com dados e capaz de desenvolver 
+                        soluções personalizadas para atender às necessidades específicas de cada cliente.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Pensador estratégico que trabalha bem sob pressão e em equipe, com excelentes habilidades de comunicação para colaborar efetivamente 
+                        com colegas, clientes e stakeholders.
+                    </p>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Principais Competências</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-badge bg-blue-50 text-blue-600 px-4 py-2 rounded-full font-medium border border-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:border-blue-800">PySpark</span>
+                            <span class="skill-badge bg-green-50 text-green-600 px-4 py-2 rounded-full font-medium border border-green-100 dark:bg-green-900 dark:text-green-100 dark:border-green-800">Scikit-Learn</span>
+                            <span class="skill-badge bg-yellow-50 text-yellow-600 px-4 py-2 rounded-full font-medium border border-yellow-100 dark:bg-yellow-900 dark:text-yellow-100 dark:border-yellow-800">Análise de Dados</span>
+                            <span class="skill-badge bg-purple-50 text-purple-600 px-4 py-2 rounded-full font-medium border border-purple-100 dark:bg-purple-900 dark:text-purple-100 dark:border-purple-800">Machine Learning</span>
+                            <span class="skill-badge bg-red-50 text-red-600 px-4 py-2 rounded-full font-medium border border-red-100 dark:bg-red-900 dark:text-red-100 dark:border-red-800">Python</span>
+                            <span class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-full font-medium border border-indigo-100 dark:bg-indigo-900 dark:text-indigo-100 dark:border-indigo-800">Power BI</span>
+                            <span class="skill-badge bg-pink-50 text-pink-600 px-4 py-2 rounded-full font-medium border border-pink-100 dark:bg-pink-900 dark:text-pink-100 dark:border-pink-800">Power Apps</span>
+                            <span class="skill-badge bg-gray-50 text-gray-600 px-4 py-2 rounded-full font-medium border border-gray-100 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600">Django</span>
+                            <span class="skill-badge bg-teal-50 text-teal-600 px-4 py-2 rounded-full font-medium border border-teal-100 dark:bg-teal-900 dark:text-teal-100 dark:border-teal-800">Análise Geoespacial</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-title">
-                <h2>Experiência Profissional</h2>
+    <section class="py-20 bg-gray-50 dark:bg-gray-900" id="experience">
+        <div class="section-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#f8fafc"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#f8fafc"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 title-font">Experiência Profissional</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">março 2024 - Presente</span>
-                        <h3 class="timeline-title">Analista de Dados</h3>
-                        <p class="timeline-company">Alloha Fibra | São Paulo, Brasil</p>
-                        <ul class="timeline-list">
-                            <li>Automação de processos com Python, reduzindo tempo de execução em 70%</li>
-                            <li>Desenvolvimento de pipelines de dados end-to-end garantindo integridade</li>
-                            <li>Análises geoespaciais avançadas com Python, Folium e QGIS</li>
-                            <li>Criação de dashboards interativos no Power BI para tomada de decisão</li>
-                            <li>Administração do Gateway de dados corporativo</li>
-                        </ul>
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 w-1 h-full bg-gradient-to-b from-blue-400 to-green-400 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-8">
+                    <!-- Item 1 -->
+                    <div class="timeline-item relative pl-8 md:pl-0 md:w-1/2 md:ml-auto md:pr-8">
+                        <div class="timeline-content bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+                            <div class="flex items-center mb-2">
+                                <span class="bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-full">Atual</span>
+                                <span class="text-gray-500 dark:text-gray-400 text-sm ml-3">Mar 2024 - Presente</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Analista de Dados - Alloha Fibra</h3>
+                            <p class="text-gray-600 dark:text-gray-300 mb-1">São Paulo, Brasil</p>
+                            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1 mt-3">
+                                <li>Automação de processos utilizando Python, otimizando o tempo de execução de tarefas repetitivas</li>
+                                <li>Desenvolvimento de pipelines completos de dados</li>
+                                <li>Análises geoespaciais com Python, Folium e QGIS</li>
+                                <li>Criação e manutenção de dashboards no Power BI</li>
+                                <li>Administração do Gateway de dados</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-dot"></div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">março 2023 - fevereiro 2024</span>
-                        <h3 class="timeline-title">Consultor e Desenvolvedor</h3>
-                        <p class="timeline-company">Autônomo</p>
-                        <ul class="timeline-list">
-                            <li>Desenvolvimento de algoritmos de ML/AutoML para análise preditiva</li>
-                            <li>Consultoria especializada em Power BI e Power Apps</li>
-                            <li>Desenvolvimento de APIs e aplicações web com Django</li>
-                            <li>Otimização de processos empresariais através de soluções de dados</li>
-                            <li>Suporte técnico para projetos de análise de dados</li>
-                        </ul>
+                    
+                    <!-- Item 2 -->
+                    <div class="timeline-item relative pl-8 md:w-1/2 md:pr-8">
+                        <div class="timeline-content bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">Mar 2023 - Fev 2024</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Consultor e Desenvolvedor - Autônomo</h3>
+                            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1 mt-3">
+                                <li>Desenvolvimento de algoritmos de Machine Learning e AutoML</li>
+                                <li>Auxílio técnico no desenvolvimento de códigos em Python</li>
+                                <li>Consultoria em Power BI e Power Apps</li>
+                                <li>Desenvolvimento de aplicações web e APIs com Django</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-dot"></div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-date">maio 2022 - fevereiro 2023</span>
-                        <h3 class="timeline-title">Desenvolvedor de BI</h3>
-                        <p class="timeline-company">TAC Services</p>
-                        <ul class="timeline-list">
-                            <li>Criação de dashboards interativos no Power BI</li>
-                            <li>Desenvolvimento de aplicações corporativas com Power Apps</li>
-                            <li>Automatização de fluxos com APIs e Python</li>
-                            <li>Implementação de BOTs para Discord e Telegram</li>
-                            <li>Integração de sistemas para eficiência operacional</li>
-                        </ul>
+                    
+                    <!-- Item 3 -->
+                    <div class="timeline-item relative pl-8 md:pl-0 md:w-1/2 md:ml-auto md:pr-8">
+                        <div class="timeline-content bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">Mai 2022 - Fev 2023</span>
+                            <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Desenvolvedor de BI - TAC Services</h3>
+                            <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1 mt-3">
+                                <li>Desenvolvimento de dashboards interativos no Power BI</li>
+                                <li>Criação de aplicações corporativas com Power Apps</li>
+                                <li>Automatização de fluxos com APIs e Python</li>
+                                <li>Implementação de BOTs para Discord e Telegram</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Projects Section -->
+    <section class="py-20 bg-white dark:bg-gray-900" id="projects">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 title-font">Projetos Destacados</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Modelo de Previsão de Vendas</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Modelo de machine learning para prever vendas com base em dados históricos e tendências de mercado.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded border border-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:border-blue-800">Python</span>
+                            <span class="text-xs bg-green-50 text-green-600 px-2 py-1 rounded border border-green-100 dark:bg-green-900 dark:text-green-100 dark:border-green-800">Scikit-Learn</span>
+                            <span class="text-xs bg-yellow-50 text-yellow-600 px-2 py-1 rounded border border-yellow-100 dark:bg-yellow-900 dark:text-yellow-100 dark:border-yellow-800">Pandas</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium inline-flex items-center">
+                            Ver Projeto <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Ferramenta de Análise Geoespacial</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Aplicativo de mapeamento interativo para visualização e análise de dados geográficos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded border border-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:border-blue-800">Python</span>
+                            <span class="text-xs bg-purple-50 text-purple-600 px-2 py-1 rounded border border-purple-100 dark:bg-purple-900 dark:text-purple-100 dark:border-purple-800">Folium</span>
+                            <span class="text-xs bg-red-50 text-red-600 px-2 py-1 rounded border border-red-100 dark:bg-red-900 dark:text-red-100 dark:border-red-800">GeoPandas</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium inline-flex items-center">
+                            Ver Projeto <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 dark:border-gray-700">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Chatbot de Suporte ao Cliente</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Chatbot com IA para lidar com consultas e tickets de suporte ao cliente.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded border border-blue-100 dark:bg-blue-900 dark:text-blue-100 dark:border-blue-800">Python</span>
+                            <span class="text-xs bg-green-50 text-green-600 px-2 py-1 rounded border border-green-100 dark:bg-green-900 dark:text-green-100 dark:border-green-800">NLTK</span>
+                            <span class="text-xs bg-pink-50 text-pink-600 px-2 py-1 rounded border border-pink-100 dark:bg-pink-900 dark:text-pink-100 dark:border-pink-800">TensorFlow</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium inline-flex items-center">
+                            Ver Projeto <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="github.com/BrenndonCJ" class="inline-flex items-center px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition-colors duration-300 font-medium dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white">
+                    <i class="fab fa-github mr-2"></i> Ver Todos Projetos no GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <div class="section-title">
-                <h2>Formação Acadêmica</h2>
+    <section class="py-20 bg-gray-50 dark:bg-gray-900" id="education">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 title-font">Formação Acadêmica</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
             </div>
             
-            <div class="education-card">
-                <h3 class="education-title">Bacharelado em Sistemas de Informação</h3>
-                <p class="education-institution">Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais - IFMG</p>
-                <span class="education-period">fevereiro 2019 - setembro 2023</span>
+            <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-700">
+                <div class="md:flex">
+                    <div class="md:w-1/3 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-8">
+                        <i class="fas fa-graduation-cap text-white text-6xl"></i>
+                    </div>
+                    <div class="p-8 md:w-2/3">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">Bacharelado em Sistemas de Informação</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais - IFMG</p>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 mb-2">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>Fevereiro 2019 - Setembro 2023</span>
+                        </div>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Minas Gerais, Brasil</span>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-800 dark:text-white mb-2">Disciplinas Relevantes:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">Estruturas de Dados</span>
+                                <span class="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">Machine Learning</span>
+                                <span class="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">Banco de Dados</span>
+                                <span class="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">Mineração de Dados</span>
+                                <span class="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-100 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600">Business Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="contact-title">Vamos Conversar</h2>
-            </div>
-            
-            <div class="contact-info">
-                <p class="contact-text">Estou sempre aberto a novas oportunidades, projetos desafiadores e colaborações interessantes.</p>
+
+    <!-- Download CV Section -->
+    <section class="py-16 bg-white dark:bg-gray-900" id="download-cv">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900 dark:to-green-900 rounded-2xl p-8 md:p-12 shadow-inner border border-gray-200 dark:border-gray-700">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4 title-font">Download do Currículo</h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">Baixe meu currículo completo em formato PDF para mais detalhes sobre minha experiência e qualificações.</p>
                 
-                <div class="contact-links">
-                    <a href="mailto:maykbrendon.antunes@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> E-mail
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="cv-Mayk Brendon.pdf" download class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center dark:bg-blue-700 dark:hover:bg-blue-800">
+                        <i class="fas fa-file-pdf text-2xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs opacity-80">Download as</div>
+                            <div>PDF Format</div>
+                        </div>
                     </a>
-                    <a href="https://www.linkedin.com/in/maykbrendondatascientist" class="contact-link">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/BrenndonCJ" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
+                    
+                    <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center dark:bg-gray-700 dark:hover:bg-gray-800">
+                        <i class="fas fa-file-word text-2xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs opacity-80">Download as</div>
+                            <div>DOCX Format</div>
+                        </div>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Contact Section -->
+    <section class="py-20 gradient-bg text-white" id="contact">
+        <div class="section-divider top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#0ea5e9"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#0ea5e9"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#0ea5e9"></path>
+            </svg>
+        </div>
+        
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 title-font">Entre em Contato</h2>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-12">Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte da sua visão.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
+                <div class="glass-effect rounded-xl p-6 flex-1">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <a href="mailto:maykbrendon.antunes@gmail.com" class="text-blue-100 hover:text-white">maykbrendon.antunes@gmail.com</a>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex-1">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                    <a href="www.linkedin.com/in/maykbrendondatascientist" class="text-blue-100 hover:text-white">linkedin.com/in/maykbrendondatascientist</a>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex-1">
+                    <div class="text-blue-300 text-4xl mb-4">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <a href="github.com/BrenndonCJ" class="text-blue-100 hover:text-white">github.com/BrenndonCJ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-text">&copy; 2024 Mayk Brendon. Todos os direitos reservados.</p>
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-white mb-2 title-font">Mayk Brendon</h3>
+                    <p class="text-blue-400">Cientista de Dados & Especialista em IA</p>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="mailto:maykbrendon.antunes@gmail.com" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="www.linkedin.com/in/maykbrendondatascientist" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="github.com/BrenndonCJ" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xl">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <a href="#download-cv" class="inline-block px-4 py-2 border border-gray-700 rounded-full text-sm hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                        Baixar CV <i class="fas fa-download ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
+                <p>&copy; 2024 Mayk Brendon. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const body = document.body;
+        
+        // Check for saved user preference or system preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            body.classList.add('dark');
+            darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            
+            if (body.classList.contains('dark')) {
+                darkModeIcon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                darkModeIcon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
