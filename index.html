@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayk Brendon | Data Scientist & AI Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;  /* Azul vibrante */
+            --primary-dark: #3a0ca3;
+            --secondary: #7209b7;  /* Roxo moderno */
+            --accent: #f72585;  /* Rosa elétrico */
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 5rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: ellipse(100% 100% at 50% 0%);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .blob {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .blob-1 {
+            top: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            fill: var(--accent);
+        }
+        
+        .blob-2 {
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            fill: var(--secondary);
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            background: linear-gradient(to right, white, #e0e0e0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            margin: 1rem auto 1.5rem;
+            max-width: 700px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .skills-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .skills-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+        }
+        
+        /* Experience Section */
+        #experience {
+            background-color: var(--light-gray);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            padding: 1.5rem;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+        
+        .timeline-content {
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(5px);
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--card-bg);
+            right: -10px;
+            top: 30px;
+            transform: rotate(45deg);
+            box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--card-bg);
+            left: -10px;
+            top: 30px;
+            transform: rotate(45deg);
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.05);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .timeline-list {
+            list-style-type: none;
+        }
+        
+        .timeline-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .timeline-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(114, 9, 183, 0.2);
+        }
+        
+        /* Education Section */
+        #education {
+            background-color: white;
+        }
+        
+        .education-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .education-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+        
+        .education-institution {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .education-period {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            color: white;
+            text-align: center;
+            clip-path: ellipse(120% 100% at 50% 100%);
+            padding-bottom: 8rem;
+        }
+        
+        .contact-title {
+            color: white;
+        }
+        
+        .contact-title h2::after {
+            background: linear-gradient(to right, white, var(--accent));
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-link i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .contact-link:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--dark);
+            color: white;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-text {
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left !important;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: 18px;
+                right: auto;
+            }
+            
+            .timeline-dot {
+                left: 31px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <svg class="blob blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M44.3,-57.3C56.8,-48.3,66.1,-33.5,70.4,-17.4C74.7,-1.3,74,16.2,65.7,31.5C57.4,46.8,41.5,59.9,23.1,67.7C4.7,75.5,-16.3,78.1,-33.4,70.6C-50.5,63.1,-63.8,45.6,-69.1,26.3C-74.4,7.1,-71.7,-13.9,-62.1,-32.4C-52.5,-50.9,-36.1,-66.9,-18.3,-74.1C-0.6,-81.3,18.4,-79.7,33.9,-70.8C49.4,-61.9,61.3,-45.7,68.7,-27.9C76.1,-10.1,79,9.3,73.8,25.9C68.6,42.6,55.3,56.5,39.3,65.2C23.3,73.9,4.6,77.4,-11.4,73.2C-27.4,69,-40.8,57,-51.5,43.1C-62.2,29.2,-70.2,13.6,-71.9,-3.1C-73.6,-19.8,-69,-39.6,-57.1,-53.1C-45.2,-66.6,-26.1,-73.8,-6.6,-70.2C12.9,-66.6,25.8,-52.2,44.3,-57.3Z" transform="translate(100 100)" />
+        </svg>
+        
+        <svg class="blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="currentColor" d="M49.3,-56.1C62.3,-45.7,70.3,-29.3,72.1,-12.6C73.9,4.1,69.5,21.1,58.2,33.2C46.9,45.3,28.7,52.5,9.3,58.3C-10.1,64.1,-30.7,68.5,-45.8,60.3C-60.9,52.1,-70.4,31.3,-73.4,9.5C-76.5,-12.3,-73,-34.9,-60.1,-49.1C-47.1,-63.2,-24.6,-68.8,-3.7,-66.4C17.1,-64,34.3,-53.5,49.3,-56.1Z" transform="translate(100 100)" />
+        </svg>
+        
+        <div class="container header-content">
+            <img src="https://ui-avatars.com/api/?name=Mayk+Brendon&size=180&background=4361ee&color=fff&font-size=0.5" alt="Mayk Brendon" class="profile-img floating">
+            <h1>Mayk Brendon</h1>
+            <p class="tagline">Data Scientist | Machine Learning Specialist | Python Expert</p>
+            
+            <div class="social-links">
+                <a href="mailto:maykbrendon.antunes@gmail.com" class="social-link" title="E-mail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/maykbrendondatascientist" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/BrenndonCJ" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Mim</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Profissional de dados apaixonado por transformar informações em insights valiosos. Com expertise em análise de dados, machine learning e visualização, desenvolvo soluções inteligentes que impulsionam resultados de negócios.</p>
+                    
+                    <p>Autor de artigo publicado sobre mineração de dados e machine learning, estou sempre buscando inovação e melhores práticas na área de ciência de dados. Minha abordagem combina conhecimento técnico avançado com uma visão estratégica de negócios.</p>
+                    
+                    <p>Como pensador estratégico, trabalho eficientemente sob pressão e em equipe, com habilidades excepcionais de comunicação para colaborar com stakeholders em todos os níveis organizacionais.</p>
+                </div>
+                
+                <div class="skills-container">
+                    <h3 class="skills-title">Principais Competências</h3>
+                    <div class="skills">
+                        <span class="skill">PySpark</span>
+                        <span class="skill">Scikit-Learn</span>
+                        <span class="skill">Análise de Dados</span>
+                        <span class="skill">Machine Learning</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Power BI</span>
+                        <span class="skill">Power Apps</span>
+                        <span class="skill">Django</span>
+                        <span class="skill">Análise Geoespacial</span>
+                        <span class="skill">AutoML</span>
+                        <span class="skill">APIs</span>
+                        <span class="skill">QGIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experiência Profissional</h2>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">março 2024 - Presente</span>
+                        <h3 class="timeline-title">Analista de Dados</h3>
+                        <p class="timeline-company">Alloha Fibra | São Paulo, Brasil</p>
+                        <ul class="timeline-list">
+                            <li>Automação de processos com Python, reduzindo tempo de execução em 70%</li>
+                            <li>Desenvolvimento de pipelines de dados end-to-end garantindo integridade</li>
+                            <li>Análises geoespaciais avançadas com Python, Folium e QGIS</li>
+                            <li>Criação de dashboards interativos no Power BI para tomada de decisão</li>
+                            <li>Administração do Gateway de dados corporativo</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-dot"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">março 2023 - fevereiro 2024</span>
+                        <h3 class="timeline-title">Consultor e Desenvolvedor</h3>
+                        <p class="timeline-company">Autônomo</p>
+                        <ul class="timeline-list">
+                            <li>Desenvolvimento de algoritmos de ML/AutoML para análise preditiva</li>
+                            <li>Consultoria especializada em Power BI e Power Apps</li>
+                            <li>Desenvolvimento de APIs e aplicações web com Django</li>
+                            <li>Otimização de processos empresariais através de soluções de dados</li>
+                            <li>Suporte técnico para projetos de análise de dados</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-dot"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">maio 2022 - fevereiro 2023</span>
+                        <h3 class="timeline-title">Desenvolvedor de BI</h3>
+                        <p class="timeline-company">TAC Services</p>
+                        <ul class="timeline-list">
+                            <li>Criação de dashboards interativos no Power BI</li>
+                            <li>Desenvolvimento de aplicações corporativas com Power Apps</li>
+                            <li>Automatização de fluxos com APIs e Python</li>
+                            <li>Implementação de BOTs para Discord e Telegram</li>
+                            <li>Integração de sistemas para eficiência operacional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Formação Acadêmica</h2>
+            </div>
+            
+            <div class="education-card">
+                <h3 class="education-title">Bacharelado em Sistemas de Informação</h3>
+                <p class="education-institution">Instituto Federal de Educação, Ciência e Tecnologia de Minas Gerais - IFMG</p>
+                <span class="education-period">fevereiro 2019 - setembro 2023</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="contact-title">Vamos Conversar</h2>
+            </div>
+            
+            <div class="contact-info">
+                <p class="contact-text">Estou sempre aberto a novas oportunidades, projetos desafiadores e colaborações interessantes.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:maykbrendon.antunes@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <a href="https://www.linkedin.com/in/maykbrendondatascientist" class="contact-link">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/BrenndonCJ" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy; 2024 Mayk Brendon. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
